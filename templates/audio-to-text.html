@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+
+    <meta name="description" content="Convert audio files in any language to text with ease. Our online audio-to-text converter makes it easy to transcribe audio files quickly and accurately. Try it now and get your transcripts in minutes.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/media.css">
+    <link rel="shortcut icon" href="../static/images/logo.png" type="image/x-icon">
+    <title>Transcribers</title>
+</head>
+<body>
+    <nav>
+        <p>Transcribers</p>
+    </nav>
+    <div class="brief">
+        <img src="../static/images/cover.png" alt="convert text in any language to audio">
+        <div class="desc">
+            <h3>Convert audio in any language to text</h3>
+            <p>The process is really simple , select an audio file which you want to get as text then select the language in which the audio is reorded and also the language in which you want the text. Do this and wait for a few minutes to get your text displayed.
+            <ul >
+                <li ><b>Make sure you dont have any background noice while recording the audio and it is suggested to use headphones to record audio.</b></li>
+                <li><b>Also note that larger the audio is more the time it takes.</b></li>
+            </ul>
+            </p>
+        </div>
+    </div>
+    <div id="loading-animation"></div>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="file" class="file-label">Upload Audio</label>
+        <input type="file" name="file" id="file">
+        <p id="file-name">File selected :</p>
+        <div class="languages">
+            <label for="lang">Choose audio language:</label>
+            <select name="lang" id="lang">
+            {%for i in languages%}
+            <option value="{{languages.get(i)}}">{{i}}</option>
+            {%endfor%}
+            </select>
+            <label for="text">Choose text language:</label>
+            <select name="text" id="text">
+            {%for i in dst_languages%}
+            <option value="{{dst_languages.get(i)}}">{{i}}</option>
+            {%endfor%}
+            </select>
+        </div>
+        <button type="submit">Convert</button>
+    </form>
+    <div class="output">
+        <p class="output-p">{{final_text}}</p>
+    </div>
+    <p class="text-center">{{error}}</p>
+
+    <footer>
+        <p>&copy;Transcribers2023</p>
+        <p>Developed by - R KRISHN VAIBHAV</p>
+        <div class="social">
+        <h4><a href="https://www.instagram.com/rkv_711" target="_blank"><i class="bi bi-instagram"></i></a></h4>
+        <h4><a href="https://www.linkedin.com/in/krishn-vaibhav-2b0233218/" target="_blank"><i class="bi bi-linkedin"></i></a></h4>
+        <h4><a href="https://github.com/krishnvaibhav" target="_blank"><i class="bi bi-github"></i></a></h4>
+        </div>
+    </footer>
+</body>
+<script src="../static/scripts.js"></script>
+</html>

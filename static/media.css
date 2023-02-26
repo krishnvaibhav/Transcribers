@@ -1,0 +1,54 @@
+@media only screen and (max-width: 1200px){
+    .languages #lang,.languages #text{
+        width: 300px;
+    }
+  }
+
+@media screen and (max-width: 992px ){
+    .brief{
+        flex-direction: column;
+    }
+    .brief img{
+        display: none;
+    }
+    .brief .desc{
+        width: 60%;
+    }
+    .languages{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+    }
+    footer p{
+        margin: 15px;
+        padding: 15px;
+        width: 70%;
+    }
+    @media screen and (max-width: 768px ){
+        nav{
+            padding: 10px;
+            margin: 10px;
+        }
+        nav p{
+            padding: 10px;
+            margin: 10px;
+        }
+        .brief .desc{
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 620px ){
+        .file-label{
+            width: 400px;
+        }
+    }
+    @media screen and (max-width: 620px ){
+        .file-label{
+            width: 250px;
+        }
+        form button[type = "submit"]{
+            width: 200px;
+        }
+    }
+}
